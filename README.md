@@ -34,7 +34,7 @@ Tutti gli importi sono stati confrontati automaticamente con il testo estratto d
 
 - Nel listino trasporti la riga da 1.000 kVA riporta «kW 200»: il menu e il calcolo usano il dato kVA 1.000 e il prezzo 3.500 euro della stessa riga, senza correggere il PDF.
 - Il prezzo Industry 700 kVA è 121.427 euro, trascritto esattamente.
-- Il marchio nell’intestazione deriva dal logo in alto a sinistra del PDF Lite, con il suffisso «2.0» rimosso su richiesta. Le icone usano la formica originale dello stesso marchio, senza ridisegni. Il menu e la struttura grafica del prototipo sono mantenuti.
+- Il marchio nell’intestazione deriva dal logo in alto a sinistra del PDF Lite, con il suffisso «2.0» e la ® rimossi su richiesta. Le icone usano la formica originale dello stesso marchio, senza ridisegni. Il menu e la struttura grafica del prototipo sono mantenuti.
 
 ## Verifiche
 
@@ -56,8 +56,12 @@ Le descrizioni generali IP seguono la [guida tecnica KEYENCE](https://www.keyenc
 
 ## Icone smartphone e pubblicazione
 
-Il logo `assets/ant-logo-092026.png` deriva dal PDF Lite originale; il suffisso «2.0» è stato rimosso con Image Gen integrato (brief: rimuovere solo «2.0» mantenendo formica, scritta ant, payoff e fondo bianco). Le icone sono renderizzazioni del simbolo originale del PDF. L’intestazione mostra «Listino 09/2026». Favicon PNG 32 px, Apple touch icon 180 px, icone Android 192/512 px e variante maskable 512 px. Il manifest usa percorsi relativi, adatti anche al sottopercorso GitHub Pages.
+Il logo `assets/ant-logo-clean.png` deriva dal PDF Lite originale; il suffisso «2.0» e la ® sono stati rimossi con Image Gen integrato (brief: mantenere formica, scritta ant, payoff e fondo bianco; rimuovere i due elementi e lo spazio vuoto superfluo). Il logo è visualizzato più grande nell’intestazione. Le icone sono renderizzazioni del simbolo originale del PDF. L’intestazione mostra «Listino 09/2026». Favicon PNG 32 px, Apple touch icon 180 px, icone Android 192/512 px e variante maskable 512 px. Il manifest usa percorsi relativi, adatti anche al sottopercorso GitHub Pages.
 
 Su iPhone/iPad: aprire il sito in Safari, Condividi → Aggiungi alla schermata Home. Su Android: aprire in Chrome, menu → Aggiungi a schermata Home (la dicitura può variare). Nome: ANT 2026. Le icone sono predisposte e verificate come risorse; l’aggiunta alla Home non è stata provata su un dispositivo fisico. Non è stato aggiunto un service worker: nessuna disponibilità offline garantita dopo l'installazione. Nessuna persistenza dei preventivi.
 
 Repository prevista: `Siriusmac/Listino-ANT`, sito `https://siriusmac.github.io/Listino-ANT/`. Pubblicazione GitHub Pages dal ramo `main`, cartella radice, con `.nojekyll`. I PDF originali e gli ZIP locali non sono pubblicati.
+
+## Foto nel riepilogo
+
+`assets/ant-standard.png` e `assets/ant-pro.png` sono le immagini originali incorporate rispettivamente nei PDF Lite e PRO, estratte tramite pypdf con la trasparenza presente nei file. Le immagini Lite e Industry sono state confrontate e risultano identiche pixel per pixel. Il riepilogo aggiorna foto e testo alternativo quando cambia la linea: Lite/Industry condividono la foto standard, PRO usa quella del cabinet nero. Sono immagini indicative di linea, non fotografie specifiche di ciascun taglio di potenza.
