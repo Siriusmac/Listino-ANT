@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#009b9c">
+  <meta name="description" content="Configuratore ANT 2026: potenza, modello, meter, cabinet e cloud. Importi IVA esclusa.">
+  <title>ANT · Configuratore 2026</title>
+  <meta name="application-name" content="ANT 2026">
+  <meta name="apple-mobile-web-app-title" content="ANT 2026">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalogue.js" defer></script>
+  <script src="calculator.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand"><img class="brand-logo" src="assets/ant-logo.png" width="752" height="280" alt="ANT 2.0 — Efficiency Saving Environment"><span class="app-name">Configuratore <strong>2026</strong></span></div>
+    <div class="lines" aria-label="Linee ANT"><span class="lite">Lite</span><span class="industry">Industry</span><span class="pro">PRO</span></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><h1>Configura il tuo ANT.</h1><p>La tua soluzione di efficientamento della rete elettrica.</p></div>
+      <aside class="source-alert" id="source-alert" hidden><strong>Listini PDF non disponibili</strong><span>Prototipo: prezzi e tagli da verificare. Non utilizzare come preventivo.</span></aside>
+    </section>
+    <div class="workspace">
+      <form id="config" class="config" aria-label="Configurazione ANT">
+        <section class="field-row">
+          <div class="field-heading"><span class="step">01</span><div><h2>Potenza</h2><p>La potenza nominale del tuo ANT.</p></div></div>
+          <div class="field-control"><label for="power">Potenza nominale</label><select id="power" name="power" required aria-describedby="power-help"><optgroup label="ANT Lite"><option value="15">15 kVA</option><option value="22">22 kVA</option><option value="30">30 kVA</option><option value="45">45 kVA</option><option value="60">60 kVA</option><option value="75">75 kVA</option><option value="100">100 kVA</option><option value="120">120 kVA</option></optgroup><optgroup label="ANT Industry"><option value="150" selected>150 kVA</option><option value="200">200 kVA</option><option value="300">300 kVA</option><option value="400">400 kVA</option><option value="500">500 kVA</option><option value="600">600 kVA</option><option value="700">700 kVA</option><option value="800">800 kVA</option><option value="1000">1.000 kVA</option><option value="1200">1.200 kVA</option><option value="1500">1.500 kVA</option><option value="1700">1.700 kVA</option><option value="2000">2.000 kVA</option><option value="2500">2.500 kVA</option><option value="3000">3.000 kVA</option><option value="3500">3.500 kVA</option><option value="4000">4.000 kVA</option></optgroup></select><p class="help" id="power-help">25 tagli disponibili · Lite e Industry/PRO.</p></div>
+        </section>
+        <section class="field-row">
+          <div class="field-heading"><span class="step">02</span><div><h2>Modello</h2><p>La linea si adatta alla potenza.</p></div></div>
+          <div class="field-control"><label class="toggle-option" for="pro"><span><strong>Versione PRO</strong><span class="option-caption">Attiva la configurazione PRO</span></span><input id="pro" name="pro" type="checkbox" role="switch" aria-describedby="pro-help"><span class="switch" aria-hidden="true"></span></label><p class="help" id="pro-help">Disponibile da 150 a 4.000 kVA.</p></div>
+        </section>
+        <section class="field-row">
+          <div class="field-heading"><span class="step">03</span><div><h2>Meter MID</h2><p>Il sistema di misura aggiuntivo.</p></div></div>
+          <div class="field-control"><label class="toggle-option" for="meter"><span><strong>Aggiungi meter MID</strong></span><input id="meter" name="meter" type="checkbox" role="switch" disabled aria-describedby="meter-help"><span class="switch" aria-hidden="true"></span></label><p class="help" id="meter-help">Disponibilità da verificare sul listino.</p></div>
+        </section>
+        <section class="field-row">
+          <div class="field-heading"><span class="step">04</span><div><h2>Cabinet</h2><p>Il grado di protezione del case.</p></div></div>
+          <div class="field-control"><label for="cabinet">Protezione IP</label><select id="cabinet" name="cabinet" aria-describedby="cabinet-help"><option value="IP21">IP21 · incluso</option><option value="IP54">IP54 · da quotare</option><option value="IP65">IP65 · da quotare</option></select><p class="help" id="cabinet-help">IP21 compreso nel prezzo base.</p></div>
+        </section>
+        <section class="field-row">
+          <div class="field-heading"><span class="step">05</span><div><h2>Cloud</h2><p>Scegli la durata dell’abbonamento.</p></div></div>
+          <div class="field-control"><label for="years">Anni di servizio</label><select id="years" name="years"><option value="1">1 anno · incluso</option><option value="2">2 anni · +1.500 €</option><option value="3">3 anni · +3.000 €</option><option value="4">4 anni · +4.500 €</option><option value="5">5 anni · +6.000 €</option></select><p class="help">Primo anno incluso, poi 1.500 €/anno.</p></div>
+        </section>
+        <div class="form-footer"><span>Nessun dato viene salvato.</span><button type="reset" class="text-button">Ripristina opzioni</button></div>
+      </form>
+      <aside class="summary" aria-labelledby="summary-heading">
+        <div class="summary-top"><h2 id="summary-heading">Riepilogo</h2><span>IVA esclusa</span></div>
+        <div class="product"><h3>ANT <span id="line-name">Industry</span></h3><p id="power-summary">150 <span>kVA</span></p><small id="line-note">Listini 2026 · Rev. 1</small></div>
+        <div id="pricing" aria-live="polite" aria-atomic="true"><div class="price-heading"><span id="total-label">Importo parziale</span><strong id="total">0,00 €</strong></div><p class="price-caption" id="total-caption">Somma delle sole voci con prezzo noto.</p><dl id="breakdown"></dl><div class="quote-warning" id="quote-warning"><strong>Totale non determinabile</strong><p id="missing"></p></div></div>
+        <button id="print" type="button" class="print-button">Stampa riepilogo <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 8V3h10v5M7 17H4V9h16v8h-3M7 14h10v7H7z"/></svg></button>
+      </aside>
+    </div>
+    <section class="ip-guide" aria-labelledby="ip-heading"><div class="ip-heading"><h2 id="ip-heading">Quale protezione scegliere?</h2><p>La prima cifra indica la protezione dai solidi, la seconda dall’acqua.</p></div><div class="ip-grid"><article><h3>IP21 <span>Incluso</span></h3><p>Protezione da corpi solidi di diametro ≥ 12,5 mm e da gocce d’acqua che cadono verticalmente.</p></article><article><h3>IP54</h3><p>Protezione dalla polvere in quantità dannose e dagli spruzzi d’acqua da tutte le direzioni.</p></article><article><h3>IP65</h3><p>Protezione totale dalla polvere e dai getti d’acqua da tutte le direzioni.</p></article></div><p class="ip-source">Descrizioni generali del codice IP: <a href="https://www.keyence.com.sg/ss/products/measure/measurement_library/basic/protection/" target="_blank" rel="noopener noreferrer">guida ai gradi di protezione</a>. La scelta dipende dalle condizioni di installazione.</p></section>
+    <footer class="footer"><span>ANT · Configuratore 2026</span><span id="footer-status">Listini 2026 Rev. 1 · importi IVA esclusa</span></footer>
+  </main>
+  <noscript><p class="noscript">Abilita JavaScript per utilizzare il configuratore.</p></noscript>
+</body>
+</html>
