@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#009b9c">
+  <meta name="description" content="Valutazioni ANT: aumento teorico delle perdite resistive in funzione di FP o cos φ, con grafico interattivo.">
+  <title>ANT · Valutazioni</title>
+  <meta name="application-name" content="ANT 2026">
+  <meta name="apple-mobile-web-app-title" content="ANT 2026">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=ac526b7ed7d2">
+  <link rel="stylesheet" href="valutazioni.css?v=f3450e5236c9">
+  <script src="evaluation-math.js?v=8744bce59831" defer></script>
+  <script src="valutazioni.js?v=fca50d139671" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand"><img class="brand-logo" src="assets/ant-logo-clean.png" width="1752" height="897" alt="ANT — Efficiency Saving Environment"><span class="app-name">Listino <strong>09/2026</strong></span></div>
+    <div class="lines" aria-label="Linee ANT"><span class="lite">Lite</span><span class="industry">Industry</span><span class="pro">PRO</span></div>
+  </header>
+  <main class="evaluation-page">
+    <section class="intro">
+      <div><h1>Valutazioni</h1><p>Come cambiano le perdite al variare del fattore di potenza.</p></div>
+      <a class="page-button" href="index.html"><span aria-hidden="true">←</span> Torna al listino</a>
+    </section>
+    <section class="evaluation-calculator" aria-labelledby="calculation-heading">
+      <form id="evaluation-form" novalidate>
+        <h2 id="calculation-heading">Inserisci il valore rilevato</h2>
+        <div class="evaluation-inputs">
+          <div><label for="factor">Valore da 0 a 1</label><input id="factor" name="factor" type="text" inputmode="decimal" value="0,80" autocomplete="off" spellcheck="false" aria-describedby="factor-help factor-error" required><p id="factor-help" class="help">Fino a due decimali, con virgola o punto.</p></div>
+          <div><label for="factor-type">Grandezza</label><select id="factor-type" name="factor-type"><option value="fp">FP · fattore di potenza</option><option value="cos">Cos φ</option></select></div>
+        </div>
+        <p id="factor-error" class="factor-error" role="alert" hidden></p>
+      </form>
+      <div class="evaluation-result" id="evaluation-result" aria-live="polite" aria-atomic="true">
+        <h2>Aumento delle perdite</h2>
+        <p class="evaluation-number" id="loss-result">+56,25<span>%</span></p>
+        <p id="result-reference">Rispetto al riferimento con FP = 1.</p>
+        <p class="multiplier" id="result-multiplier">1,56 volte le perdite del riferimento.</p>
+      </div>
+    </section>
+    <p class="model-note">La percentuale riguarda le <strong>perdite resistive</strong>, non l’intero consumo di energia. Il confronto mantiene costanti potenza utile, tensione e resistenza.</p>
+    <section class="evaluation-chart" aria-labelledby="chart-heading">
+      <div class="chart-heading"><div><h2 id="chart-heading">Il fattore scende, le perdite aumentano</h2><p id="chart-scale">Asse X: aumento delle perdite da 0 a 100%.</p></div><div class="chart-legend" aria-label="Legenda"><span><i class="legend-fp" aria-hidden="true"></i>FP</span><span><i class="legend-cos" aria-hidden="true"></i>Cos φ</span><span><i class="legend-point" aria-hidden="true"></i>Valore inserito</span></div></div>
+      <div class="chart-viewport"><svg id="loss-chart" viewBox="0 0 960 430" role="img" aria-labelledby="svg-title svg-description"><title id="svg-title">Aumento delle perdite in funzione di FP e cos φ</title><desc id="svg-description">Asse orizzontale: aumento percentuale delle perdite. Asse verticale: fattore da 1 a 0. Le curve coincidono nel modello senza distorsione.</desc><g id="chart-grid"></g><g id="chart-curves"></g><g id="chart-marker"></g></svg></div>
+      <p class="chart-reading" id="chart-reading">FP 0,80 → aumento delle perdite +56,25%.</p>
+      <p class="chart-note">Nel confronto senza distorsione le curve coincidono: FP in blu, cos φ in rosso tratteggiato. La scala orizzontale si amplia automaticamente per mostrare anche risultati oltre il 100%.</p>
+    </section>
+    <section class="factor-explanation" aria-labelledby="explanation-heading">
+      <h2 id="explanation-heading">FP e cos φ: qual è la differenza?</h2>
+      <div class="factor-definitions"><article><h3><span class="blue-dot" aria-hidden="true"></span>FP · fattore di potenza</h3><p>È il rapporto tra potenza attiva e potenza apparente. Considera la forma complessiva di tensione e corrente, inclusa la distorsione.</p></article><article><h3><span class="red-dot" aria-hidden="true"></span>Cos φ</h3><p>Descrive lo sfasamento tra le componenti fondamentali di tensione e corrente. Da solo non comprende la distorsione: qui viene usato nel confronto senza distorsione.</p></article></div>
+      <details class="calculation-method"><summary>Metodo di calcolo e limiti</summary><div><p><strong>Aumento (%) = (1 / f² − 1) × 100</strong>, dove f è il valore inserito.</p><p>È una stima comparativa delle perdite resistive a parità di potenza utile, tensione, resistenza e durata. Per FP si usa il rapporto attiva/apparente; per cos φ si assume un regime senza distorsione. Con f = 0 e potenza utile positiva il modello non dà un risultato finito. Non vengono calcolate le perdite assolute dell’impianto né il risparmio ottenibile con ANT.</p><p>Riferimenti: Schneider Electric, <a href="https://www.electrical-installation.org/enwiki/Why_improve_the_power_factor%3F" target="_blank" rel="noopener noreferrer">corrente e perdite nei cavi</a>; <a href="https://www.electrical-installation.org/enwiki/Harmonic_distortion_indicators_-_Power_factor" target="_blank" rel="noopener noreferrer">differenza tra FP e cos φ</a>.</p></div></details>
+    </section>
+    <footer class="footer"><span>ANT · Valutazioni</span><span>Nessun dato viene salvato.</span></footer>
+  </main>
+  <noscript><p class="noscript">Abilita JavaScript per il calcolo e il grafico.</p></noscript>
+</body>
+</html>

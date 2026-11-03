@@ -41,10 +41,10 @@ Tutti gli importi sono stati confrontati automaticamente con il testo estratto d
 Con Node.js:
 
 ```sh
-node --test tests/calculator.test.cjs
+node --test tests/*.test.cjs
 ```
 
-18 test superati: 13 sul motore con dati sintetici isolati e 5 sul catalogo reale, compresi tutti i tagli, vincoli PRO/meter, cloud, cabinet, costi ignoti e soglia trasporti.
+25 test superati: 13 sul motore con dati sintetici isolati, 5 sul catalogo reale e 7 sul calcolo Valutazioni. Coprono tagli, vincoli PRO/meter, prezzi, cloud, costi ignoti, precisione, limiti e scala del grafico.
 
 Confronto indipendente con i PDF: corrispondenza di tutte le 42 righe prodotto (prezzo, meter e cabinet) e di tutte le 17 tariffe trasporto.
 
@@ -60,8 +60,20 @@ Il logo `assets/ant-logo-clean.png` deriva dal PDF Lite originale; il suffisso �
 
 Su iPhone/iPad: aprire il sito in Safari, Condividi → Aggiungi alla schermata Home. Su Android: aprire in Chrome, menu → Aggiungi a schermata Home (la dicitura può variare). Nome: ANT 2026. Le icone sono predisposte e verificate come risorse; l’aggiunta alla Home non è stata provata su un dispositivo fisico. Non è stato aggiunto un service worker: nessuna disponibilità offline garantita dopo l'installazione. Nessuna persistenza dei preventivi.
 
-Repository prevista: `Siriusmac/Listino-ANT`, sito `https://siriusmac.github.io/Listino-ANT/`. Pubblicazione GitHub Pages dal ramo `main`, cartella radice, con `.nojekyll`. I PDF originali e gli ZIP locali non sono pubblicati.
+Repository: `Siriusmac/Listino-ANT`, sito `https://siriusmac.github.io/Listino-ANT/`. Pubblicazione GitHub Pages dal ramo `main`, cartella radice, con `.nojekyll`. I PDF originali e gli ZIP locali non sono pubblicati.
 
 ## Foto nel riepilogo
 
 `assets/ant-standard.png` e `assets/ant-pro.png` sono le immagini originali incorporate rispettivamente nei PDF Lite e PRO, estratte tramite pypdf con la trasparenza presente nei file. Le immagini Lite e Industry sono state confrontate e risultano identiche pixel per pixel. Il riepilogo aggiorna foto e testo alternativo quando cambia la linea: Lite/Industry condividono la foto standard, PRO usa quella del cabinet nero. Sono immagini indicative di linea, non fotografie specifiche di ciascun taglio di potenza.
+
+## Valutazioni
+
+Pagina `valutazioni.html`, raggiungibile dal pulsante Valutazioni accanto al titolo del listino, con ritorno tramite Torna al listino. Input 0–1 con al massimo due decimali, virgola o punto; selezione FP o cos φ; risultato immediato, grafico SVG responsive e pallino del valore calcolato. Nessuna persistenza.
+
+Metodo scelto dall'utente: **aumento delle perdite resistive rispetto al riferimento a fattore unitario**, non quota dei consumi totali e non quota evitabile. Formula derivata: `(1 / f² - 1) × 100`, a potenza utile, tensione, resistenza e durata costanti. Esempi: 0,80 → +56,25%; 0,50 → +300%; 1 → 0%. A zero il confronto non ha un risultato finito e il punto è nascosto. Per cos φ si assume assenza di distorsione; nessun valore THDi viene inventato e non è presente un campo THDi. Le due curve, blu FP e rossa tratteggiata cos φ, coincidono in questo modello e il testo lo dichiara.
+
+Asse Y: 1 in alto, 0 in basso. Asse X: inizialmente 0–100%, con espansione automatica per contenere i risultati oltre il 100%, come richiesto nella precisazione. Il grafico è lo stesso confronto resistivo per le due grandezze; non rappresenta una misura dell'efficienza totale dell'impianto o del risparmio ANT.
+
+Fonti: Schneider Electric, [perdite nei cavi proporzionali al quadrato della corrente](https://www.electrical-installation.org/enwiki/Why_improve_the_power_factor%3F) e [FP rispetto a cos φ](https://www.electrical-installation.org/enwiki/Harmonic_distortion_indicators_-_Power_factor). Le formule inverse per il grafico sono verificate nei test.
+
+QA nel browser integrato: desktop 1440 × 1000, smartphone simulato 390 × 844 e 320 × 740; nessuna eccedenza orizzontale. Provati ingresso dal listino e ritorno, 0,80, 0,50, 0,01, 1, 0, input con tre decimali e cambio FP/cos φ. Verificati risultato, scala, coordinate del pallino e rimozione del punto per dati invalidi o non finiti; nessun errore applicativo in console. Le risorse CSS/JS hanno riferimenti versionati per evitare versioni miste in cache.
