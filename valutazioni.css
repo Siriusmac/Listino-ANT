@@ -3,3 +3,26 @@
 @media(max-width:600px){.evaluation-page .intro{display:flex;align-items:flex-start;gap:14px}.evaluation-page .intro h1{font-size:30px}.evaluation-page .intro>div>p{max-width:200px}.evaluation-page .page-button{font-size:11px;padding:10px;flex-shrink:0}.evaluation-calculator{grid-template-columns:1fr}.evaluation-calculator form{padding:22px}.evaluation-inputs{grid-template-columns:1fr 1.3fr;gap:12px;margin-top:20px}.evaluation-inputs select{font-size:12px;padding-left:9px;padding-right:27px;background-position:right 7px center}.evaluation-result{border-left:0;border-top:1px solid var(--border);padding:22px}.evaluation-number{font-size:40px}.evaluation-page h2{font-size:18px}.evaluation-result h2{font-size:13px}.model-note{font-size:11px;margin-bottom:24px}.evaluation-chart{padding:19px 15px}.chart-viewport{margin-top:15px}#loss-chart{min-height:240px}.chart-legend{font-size:10px;gap:13px}.chart-reading{font-size:12px;margin-top:12px}.chart-note{font-size:11px}.factor-definitions{grid-template-columns:1fr;gap:22px}.factor-definitions article+article{border-left:0;border-top:1px solid var(--border);padding-left:0;padding-top:22px}.factor-explanation{padding:26px 0}.factor-definitions p{font-size:12px}.calculation-method{font-size:11px}}
 @media(max-width:365px){.evaluation-page .intro{display:block}.evaluation-page .page-button{margin-top:15px}.evaluation-inputs{grid-template-columns:1fr}.evaluation-number{font-size:36px}}
 @media print{.evaluation-calculator{break-inside:avoid}.evaluation-chart{break-inside:avoid}.evaluation-page .page-button{display:none}.evaluation-result{print-color-adjust:exact;-webkit-print-color-adjust:exact}.factor-definitions{break-inside:avoid}}
+/* Percorso semplificato: un solo cosphi, una sola curva. */
+.evaluation-inputs{grid-template-columns:minmax(160px,300px)}
+.factor-intro{font-size:13px;line-height:1.85;color:var(--muted);margin-top:13px;max-width:1000px}
+.factor-intro strong{color:var(--ink);font-weight:600}
+.concept-diagrams{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:24px}
+.concept-diagram{margin:0;min-width:0;padding:20px;border:1px solid var(--border);border-radius:5px}
+.concept-diagram h3{font-size:15px;line-height:1.5;letter-spacing:-.2px}
+.concept-svg{display:block;width:100%;height:auto;margin:20px 0 10px;overflow:visible}
+.concept-svg text{font-family:Arial,Helvetica,sans-serif;fill:var(--ink)}
+.concept-svg .concept-label{font-size:20px;font-weight:600}
+.concept-svg .concept-small{font-size:18px;fill:var(--muted)}
+.concept-diagram p{font-size:12px;line-height:1.8;color:var(--muted)}
+.concept-diagram strong{color:var(--ink);font-weight:600}
+.energy-units{padding-top:30px}.energy-units>h2{font-size:20px;letter-spacing:-.4px}
+.energy-units>p{font-size:13px;line-height:1.85;color:var(--muted);margin-top:12px}
+.unit-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13px;line-height:1.7;text-align:left}
+.unit-table th,.unit-table td{padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+.unit-table thead{background:var(--surface);font-size:12px}.unit-table tbody th{width:85px;font-size:17px;white-space:nowrap}
+.unit-table td{color:var(--muted)}.unit-table td:nth-child(2){width:190px;color:var(--ink)}
+.energy-units .energy-example{padding:17px 20px;border-left:3px solid var(--accent);background:var(--surface);margin-top:22px}
+@media(max-width:850px){.concept-diagrams{grid-template-columns:1fr}.concept-diagram{padding:20px 24px}.concept-svg{max-width:560px;margin-left:auto;margin-right:auto}}
+@media(max-width:600px){.evaluation-inputs{grid-template-columns:1fr;max-width:240px}.factor-intro{font-size:12px}.concept-diagrams{gap:18px}.concept-diagram{padding:18px 14px}.concept-diagram h3{font-size:14px}.concept-diagram p{font-size:11px}.concept-svg{margin-top:16px}.energy-units>h2{font-size:18px}.energy-units>p{font-size:12px}.unit-table{font-size:11px}.unit-table thead{font-size:10px}.unit-table th,.unit-table td{padding:10px 7px}.unit-table tbody th{width:49px;font-size:14px}.unit-table td:nth-child(2){width:95px}.energy-units .energy-example{padding:13px 15px}}
+@media print{.concept-diagram,.energy-units{break-inside:avoid}.concept-diagrams{grid-template-columns:1fr 1fr}}

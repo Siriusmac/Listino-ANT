@@ -68,12 +68,19 @@ Repository: `Siriusmac/Listino-ANT`, sito `https://siriusmac.github.io/Listino-A
 
 ## Valutazioni
 
-Pagina `valutazioni.html`, raggiungibile dal pulsante Valutazioni accanto al titolo del listino, con ritorno tramite Torna al listino. Input 0–1 con al massimo due decimali, virgola o punto; selezione FP o cos φ; risultato immediato, grafico SVG responsive e pallino del valore calcolato. Nessuna persistenza.
+Pagina `valutazioni.html`, raggiungibile dal pulsante Valutazioni accanto al titolo del listino, con ritorno tramite Torna al listino. Percorso semplificato: un solo campo **cosphi** 0–1, al massimo due decimali, virgola o punto; nessun selettore FP/cos φ, nessun campo THDi e una sola curva blu con pallino del valore calcolato. Nessuna persistenza.
 
-Metodo scelto dall'utente: **aumento delle perdite resistive rispetto al riferimento a fattore unitario**, non quota dei consumi totali e non quota evitabile. Formula derivata: `(1 / f² - 1) × 100`, a potenza utile, tensione, resistenza e durata costanti. Esempi: 0,80 → +56,25%; 0,50 → +300%; 1 → 0%. A zero il confronto non ha un risultato finito e il punto è nascosto. Per cos φ si assume assenza di distorsione; nessun valore THDi viene inventato e non è presente un campo THDi. Le due curve, blu FP e rossa tratteggiata cos φ, coincidono in questo modello e il testo lo dichiara.
+Metodo scelto dall'utente: **aumento delle perdite resistive rispetto al riferimento a fattore unitario**. Formula derivata: `(1 / f² - 1) × 100`, a potenza attiva, tensione, resistenza e durata costanti. Esempi: 0,80 → +56,25%; 0,50 → +300%; 1 → 0%. A zero il confronto non ha un risultato finito e il punto è nascosto. Non viene considerato il THD: cosphi e FP coincidono nel modello sinusoidale adottato. Il risultato non è una percentuale dei consumi totali né un risparmio garantito con ANT; questo limite è dichiarato nel paragrafo principale.
 
-Asse Y: 1 in alto, 0 in basso. Asse X: inizialmente 0–100%, con espansione automatica per contenere i risultati oltre il 100%, come richiesto nella precisazione. Il grafico è lo stesso confronto resistivo per le due grandezze; non rappresenta una misura dell'efficienza totale dell'impianto o del risparmio ANT.
+Asse Y: cosphi da 1 in alto a 0 in basso. Asse X: inizialmente 0–100%, con espansione automatica per i risultati oltre il 100%. La spiegazione FP/cos φ è condensata in un solo paragrafo e precisa che entrambe le grandezze sono adimensionali.
 
-Fonti: Schneider Electric, [perdite nei cavi proporzionali al quadrato della corrente](https://www.electrical-installation.org/enwiki/Why_improve_the_power_factor%3F) e [FP rispetto a cos φ](https://www.electrical-installation.org/enwiki/Harmonic_distortion_indicators_-_Power_factor). Le formule inverse per il grafico sono verificate nei test.
+Due schemi SVG originali, didattici e fissi, completano la spiegazione:
 
-QA nel browser integrato: desktop 1440 × 1000, smartphone simulato 390 × 844 e 320 × 740; nessuna eccedenza orizzontale. Provati ingresso dal listino e ritorno, 0,80, 0,50, 0,01, 1, 0, input con tre decimali e cambio FP/cos φ. Verificati risultato, scala, coordinate del pallino e rimozione del punto per dati invalidi o non finiti; nessun errore applicativo in console. Le risorse CSS/JS hanno riferimenti versionati per evitare versioni miste in cache.
+- Tensione blu e corrente arancione sfasate di circa 36,9°, con ampiezze normalizzate; esempio cosphi 0,80. Non rappresentano misure del cliente.
+- Triangolo P/Q/S con 80 kW attivi, 60 kvar reattivi, 100 kVA apparenti, `cosphi = P/S` e `S² = P² + Q²`, valido nel confronto senza THD. La reattiva non viene presentata come energia interamente dissipata.
+
+La sezione sulle unità distingue kW (potenza attiva), kVA (potenza apparente), kvar (potenza reattiva) e kWh (energia nel tempo). Esempio illustrativo coerente con i due schemi: 100 kVA a cosphi 0,80 danno 80 kW; mantenuti costanti per 5 ore corrispondono a 400 kWh.
+
+Fonti: Schneider Electric, [perdite nei cavi proporzionali al quadrato della corrente](https://www.electrical-installation.org/enwiki/Why_improve_the_power_factor%3F), [definizione di fattore di potenza](https://www.electrical-installation.org/enwiki/Definition_of_Power_Factor) e [FP rispetto a cos φ](https://www.electrical-installation.org/enwiki/Harmonic_distortion_indicators_-_Power_factor); EIA, [potenza ed energia](https://www.eia.gov/energyexplained/electricity/measuring-electricity.php).
+
+QA: 25 test automatici superati. Browser integrato a 1440 × 1000, 390 × 844 e 320 × 740: una sola curva, nessun selettore di grandezza, calcolo 0,80 e 0,50, gestione zero e tre decimali, disegni e tabella leggibili; nessuna eccedenza orizzontale o errore applicativo in console. Schemi fissi indipendenti dal valore inserito, sempre etichettati come esempi. Risorse CSS/JS versionate per evitare versioni miste in cache. Smartphone verificato in emulazione, non su dispositivo fisico.
