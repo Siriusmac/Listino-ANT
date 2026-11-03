@@ -42,10 +42,12 @@
     $('line-name').textContent = result.line;
     const photo = $('product-photo');
     const photoSource = result.pro ? 'assets/ant-pro.png' : 'assets/ant-standard.png';
-    if (photo.getAttribute('src') !== photoSource) photo.src = photoSource;
-    photo.alt = `ANT ${result.line}, foto dal listino`;
-    photo.width = result.pro ? 557 : 519;
-    photo.height = result.pro ? 929 : 863;
+    if (photo) {
+      if (photo.getAttribute('src') !== photoSource) photo.src = photoSource;
+      photo.alt = `ANT ${result.line}, foto dal listino`;
+      photo.width = result.pro ? 557 : 519;
+      photo.height = result.pro ? 929 : 863;
+    }
     $('power-summary').replaceChildren(document.createTextNode(`${power.toLocaleString('it-IT')} `));
     const unit = document.createElement('span'); unit.textContent = 'kVA'; $('power-summary').append(unit);
     $('line-note').textContent = catalogue.verified ? 'Listini 2026 · Rev. 1' : 'Linea indicativa · taglio da verificare';
