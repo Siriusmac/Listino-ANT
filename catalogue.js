@@ -41,7 +41,8 @@
         35,
         80,
         85
-      ]
+      ],
+      "weightKg": 100
     },
     {
       "power": 22,
@@ -54,7 +55,8 @@
         35,
         80,
         85
-      ]
+      ],
+      "weightKg": 125
     },
     {
       "power": 30,
@@ -67,7 +69,8 @@
         35,
         80,
         85
-      ]
+      ],
+      "weightKg": 145
     },
     {
       "power": 45,
@@ -80,7 +83,8 @@
         60,
         70,
         140
-      ]
+      ],
+      "weightKg": 220
     },
     {
       "power": 60,
@@ -93,7 +97,8 @@
         60,
         70,
         140
-      ]
+      ],
+      "weightKg": 260
     },
     {
       "power": 75,
@@ -106,7 +111,8 @@
         60,
         70,
         140
-      ]
+      ],
+      "weightKg": 270
     },
     {
       "power": 100,
@@ -119,7 +125,8 @@
         70,
         80,
         140
-      ]
+      ],
+      "weightKg": 290
     },
     {
       "power": 120,
@@ -132,7 +139,8 @@
         70,
         80,
         140
-      ]
+      ],
+      "weightKg": 310
     },
     {
       "power": 150,
@@ -145,7 +153,8 @@
         80,
         90,
         170
-      ]
+      ],
+      "weightKg": 500
     },
     {
       "power": 200,
@@ -158,7 +167,8 @@
         80,
         90,
         170
-      ]
+      ],
+      "weightKg": 600
     },
     {
       "power": 300,
@@ -171,7 +181,8 @@
         90,
         100,
         170
-      ]
+      ],
+      "weightKg": 750
     },
     {
       "power": 400,
@@ -184,7 +195,8 @@
         90,
         120,
         190
-      ]
+      ],
+      "weightKg": 1090
     },
     {
       "power": 500,
@@ -197,7 +209,8 @@
         90,
         120,
         190
-      ]
+      ],
+      "weightKg": 1150
     },
     {
       "power": 600,
@@ -210,7 +223,8 @@
         210,
         80,
         170
-      ]
+      ],
+      "weightKg": 1250
     },
     {
       "power": 700,
@@ -223,7 +237,8 @@
         240,
         80,
         170
-      ]
+      ],
+      "weightKg": 1600
     },
     {
       "power": 800,
@@ -236,7 +251,8 @@
         240,
         80,
         170
-      ]
+      ],
+      "weightKg": 1900
     },
     {
       "power": 1000,
@@ -249,7 +265,8 @@
         250,
         100,
         170
-      ]
+      ],
+      "weightKg": 2300
     },
     {
       "power": 1200,
@@ -262,7 +279,8 @@
         260,
         100,
         170
-      ]
+      ],
+      "weightKg": 2700
     },
     {
       "power": 1500,
@@ -275,7 +293,8 @@
         290,
         120,
         180
-      ]
+      ],
+      "weightKg": 3100
     },
     {
       "power": 1700,
@@ -288,7 +307,8 @@
         290,
         120,
         180
-      ]
+      ],
+      "weightKg": 3200
     },
     {
       "power": 2000,
@@ -301,7 +321,8 @@
         290,
         120,
         180
-      ]
+      ],
+      "weightKg": 3500
     },
     {
       "power": 2500,
@@ -314,7 +335,8 @@
         300,
         130,
         220
-      ]
+      ],
+      "weightKg": 4000
     },
     {
       "power": 3000,
@@ -327,7 +349,8 @@
         330,
         130,
         220
-      ]
+      ],
+      "weightKg": 5000
     },
     {
       "power": 3500,
@@ -336,7 +359,8 @@
       "meter": 4000000,
       "IP54": 6000000,
       "IP65": 8500000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 4000,
@@ -345,7 +369,8 @@
       "meter": 4500000,
       "IP54": 6500000,
       "IP65": 9000000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 150,
@@ -358,7 +383,8 @@
         100,
         120,
         167
-      ]
+      ],
+      "weightKg": 620
     },
     {
       "power": 200,
@@ -371,7 +397,8 @@
         110,
         130,
         175
-      ]
+      ],
+      "weightKg": 700
     },
     {
       "power": 300,
@@ -384,7 +411,8 @@
         90,
         120,
         190
-      ]
+      ],
+      "weightKg": 900
     },
     {
       "power": 400,
@@ -397,7 +425,8 @@
         90,
         120,
         190
-      ]
+      ],
+      "weightKg": 1420
     },
     {
       "power": 500,
@@ -406,7 +435,8 @@
       "meter": false,
       "IP54": 2000000,
       "IP65": 2400000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 600,
@@ -415,7 +445,8 @@
       "meter": false,
       "IP54": 2400000,
       "IP65": 2700000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 700,
@@ -424,7 +455,8 @@
       "meter": false,
       "IP54": 2600000,
       "IP65": 3000000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 800,
@@ -433,7 +465,8 @@
       "meter": false,
       "IP54": 2800000,
       "IP65": 3500000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 1000,
@@ -442,7 +475,8 @@
       "meter": false,
       "IP54": 3000000,
       "IP65": 3900000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 1200,
@@ -451,7 +485,8 @@
       "meter": false,
       "IP54": 3300000,
       "IP65": 4200000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 1500,
@@ -460,7 +495,8 @@
       "meter": false,
       "IP54": 3600000,
       "IP65": 4500000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 1700,
@@ -469,7 +505,8 @@
       "meter": false,
       "IP54": 3800000,
       "IP65": 4800000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 2000,
@@ -478,7 +515,8 @@
       "meter": false,
       "IP54": 4000000,
       "IP65": 5000000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 2500,
@@ -487,7 +525,8 @@
       "meter": false,
       "IP54": 4200000,
       "IP65": 6100000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 3000,
@@ -496,7 +535,8 @@
       "meter": false,
       "IP54": 5500000,
       "IP65": 6500000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 3500,
@@ -505,7 +545,8 @@
       "meter": false,
       "IP54": 6100000,
       "IP65": 7500000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     },
     {
       "power": 4000,
@@ -514,7 +555,8 @@
       "meter": false,
       "IP54": 6700000,
       "IP65": 8600000,
-      "dimensionsCm": null
+      "dimensionsCm": null,
+      "weightKg": null
     }
   ],
   "transport": {

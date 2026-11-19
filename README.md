@@ -87,6 +87,8 @@ QA: 25 test automatici superati. Browser integrato a 1440 × 1000, 390 × 844 e 
 
 Precisazione sulle unità: kVA e kW non indicano rispettivamente input e output. Nello stesso punto FP = P/S, mentre il rendimento confronta potenze attive/utile a ingresso e uscita. Per il monofase S = Veff × Ieff; p(t) = v(t) × i(t) e P è la media di p(t) su un periodo. 100 kVA e 80 kW non implicano 20 kW dissipati. Fonte tecnica aggiuntiva: [Tektronix](https://www.tek.com/en/documents/application-note/fundamentals-ac-power-measurements).
 
-### Dimensioni nel riepilogo
+### Dimensioni e peso nel riepilogo
 
-Le dimensioni sono trascritte dai tre PDF originali, nello stesso ordine del listino e in centimetri (L × P × H esplicitato dal PDF PRO). Sono riferite al modello base descritto nel listino; i PDF non forniscono ingombri distinti per cabinet opzionali o meter. I valori N.D. restano `null`: Industry 3.500–4.000 kVA e PRO da 500 kVA mostrano “Dimensioni non disponibili a listino”.
+Le dimensioni sono trascritte dai tre PDF originali, nello stesso ordine del listino e in centimetri (L × P × H esplicitato dal PDF PRO). Sono riferite al modello base descritto nel listino; i PDF non forniscono ingombri distinti per cabinet opzionali o meter. I valori N.D. restano `null`: Industry 3.500–4.000 kVA e PRO da 500 kVA mostrano “Dimensioni non disponibili” e “Peso non disponibile”.
+
+Il peso in kg è trascritto dalla stessa riga DIM. - PESO di ciascun PDF e compare sotto le dimensioni. I 27 pesi disponibili sono stati confrontati con le 42 righe dei tre listini; i 15 valori N.D. restano `null`.

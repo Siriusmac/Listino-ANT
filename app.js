@@ -52,8 +52,12 @@
     const unit = document.createElement('span'); unit.textContent = 'kVA'; $('power-summary').append(unit);
     const dimensions = result.product?.dimensionsCm;
     $('product-dimensions').textContent = dimensions
-      ? `Dimensioni da listino: ${dimensions.join(' × ')} cm`
-      : 'Dimensioni non disponibili a listino';
+      ? `Dimensioni: ${dimensions.join(' × ')} cm`
+      : 'Dimensioni non disponibili';
+    const weight = result.product?.weightKg;
+    $('product-weight').textContent = Number.isFinite(weight)
+      ? `Peso: ${weight.toLocaleString('it-IT')} kg`
+      : 'Peso non disponibile';
     $('line-note').textContent = catalogue.verified ? 'Listini 2026 · Rev. 1' : 'Linea indicativa · taglio da verificare';
     $('total-label').textContent = result.total === null ? 'Importo parziale' : 'Totale configurazione';
     $('total').textContent = money(result.subtotal);
